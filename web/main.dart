@@ -42,6 +42,15 @@ void test(){
   }
   testArray(list1);
   testClass();
+  testFun();
+}
+
+
+void testFun(){
+  int sort(Object a, Object b) => 0;
+  print(sort is Function);
+  SortedCollection coll = new SortedCollection(sort);
+  print(coll.compare is Function);
 }
 
 void testClass(){
@@ -127,3 +136,13 @@ class Imposter implements Person1 {
 
 greetBob(Person1 person) => person.greet('bob');
 greetBob1(Imposter imposter) => imposter.greet('2333');
+
+
+
+class SortedCollection {
+  Function compare;
+  // 传递进来的function，并且重新命名为compare方法
+  SortedCollection(int f(Object a, Object b)) {
+    compare = f;
+  }
+}
