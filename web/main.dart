@@ -1,5 +1,9 @@
 import 'dart:html';
 import 'dart:convert';
+
+//引入本地的文件，进行执行测试
+import 'demo/index.dart';
+
 void main() {
   // .. 级联操作符
   print(querySelector('#output').text='w233');//输出w233
@@ -76,6 +80,9 @@ void testClass(){
   // 接口
   print(greetBob(new Person1('jilong5')));
   print(greetBob1(new Imposter()));
+
+  //加法调用
+  print('加法调用${plus(1,2)}');
 }
 class Point {
     num x;
